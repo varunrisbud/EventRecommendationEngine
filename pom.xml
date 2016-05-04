@@ -24,6 +24,12 @@
             <classifier>hadoop1</classifier>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.mahout</groupId>
+            <artifactId>mahout-core</artifactId>
+            <version>0.9</version>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -52,6 +58,17 @@
             </plugin>
 
         </plugins>
+
+        <resources>
+
+            <resource>
+                <directory>src/main/resources/inputs</directory>
+                <includes>
+                    <include>**/*.csv</include>
+                </includes>
+            </resource>
+
+        </resources>
 
     </build>
 
