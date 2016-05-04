@@ -21,7 +21,7 @@
             <groupId>org.apache.mrunit</groupId>
             <artifactId>mrunit</artifactId>
             <version>1.1.0</version>
-            <classifier>hadoop1</classifier>
+            <classifier>hadoop2</classifier>
         </dependency>
 
         <dependency>

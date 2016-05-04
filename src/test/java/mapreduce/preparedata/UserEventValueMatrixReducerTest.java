@@ -24,7 +24,7 @@ public class UserEventValueMatrixReducerTest {
         userIdValuePairs.add(new Text("187558548|3"));
         userIdValuePairs.add(new Text("187558549|4"));
         userIdValuePairs.add(new Text("187558547|1"));
-        Text eventId = new Text("123456");
+        Text eventId = new Text("12345");
         reduceDriver.withInput(eventId, userIdValuePairs);
 
         List<Pair<Text, Text>> result = reduceDriver.run();

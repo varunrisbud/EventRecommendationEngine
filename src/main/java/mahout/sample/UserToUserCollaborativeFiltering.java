@@ -41,7 +41,7 @@ public class UserToUserCollaborativeFiltering {
 
             UserToUserCollaborativeFiltering userToUserCollaborativeFiltering = new UserToUserCollaborativeFiltering();
 
-            List<RecommendedItem> recommendations = userToUserCollaborativeFiltering.getRecommendation(2, 3);
+            List<RecommendedItem> recommendations = userToUserCollaborativeFiltering.getRecommendation(2, 2);
 
             for (RecommendedItem recommendation : recommendations) System.out.println(recommendation);
     }
