@@ -1,10 +1,11 @@
-package mahout.sample;
+package sample;
 
 import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
+
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
@@ -22,7 +23,7 @@ public class UserToUserCollaborativeFiltering {
 
     public List<RecommendedItem> getRecommendation(int userId, int numberOfRecommendations) throws IOException, TasteException {
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("data.csv").getFile());
+        File file = new File("/user/user01/EventRecommendationEngine/DATA/data.csv");
 
         DataModel model = new FileDataModel(file);
 
@@ -39,10 +40,11 @@ public class UserToUserCollaborativeFiltering {
 
     public static void main(String[] args) throws IOException, TasteException {
 
-            UserToUserCollaborativeFiltering userToUserCollaborativeFiltering = new UserToUserCollaborativeFiltering();
+        UserToUserCollaborativeFiltering userToUserCollaborativeFiltering = new UserToUserCollaborativeFiltering();
 
-            List<RecommendedItem> recommendations = userToUserCollaborativeFiltering.getRecommendation(2, 2);
+        List<RecommendedItem> recommendations = userToUserCollaborativeFiltering.getRecommendation(2, 3);
 
-            for (RecommendedItem recommendation : recommendations) System.out.println(recommendation);
+        for (RecommendedItem recommendation : recommendations) System.out.println(recommendation);
     }
+
 }

@@ -1,4 +1,4 @@
-package mahout.sample;
+package sample;
 
 import junit.framework.Assert;
 import org.apache.mahout.cf.taste.common.TasteException;
@@ -13,13 +13,9 @@ import java.util.List;
  */
 public class UserToUserCollaborativeFilteringTest {
     @Test
-    public void getRecommendationTest() throws IOException, TasteException {
+    public void getRecommendationsTest() throws IOException, TasteException {
         UserToUserCollaborativeFiltering userToUserCollaborativeFiltering = new UserToUserCollaborativeFiltering();
         List<RecommendedItem> recommendations = userToUserCollaborativeFiltering.getRecommendation(2, 3);
         Assert.assertEquals(3, recommendations.size());
-
-        /*for (RecommendedItem recommendation : recommendations) {
-            System.out.println(recommendation);
-        }*/
     }
 }
