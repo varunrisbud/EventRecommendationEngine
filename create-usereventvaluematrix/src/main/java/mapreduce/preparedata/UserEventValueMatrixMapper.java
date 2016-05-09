@@ -7,7 +7,7 @@ import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 import java.io.IOException;
 
 /**
- * Created by alcohol on 5/2/16.
+ * Created by varun on 5/2/16.
  */
 public class UserEventValueMatrixMapper extends Mapper<Text, Text, Text, Text> {
     private static final String yesValue = "3";
