@@ -16,10 +16,10 @@ public class UserEventValueMatrixMapper extends Mapper<Text, Text, Text, Text> {
 
     public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
         String[] valueParts = key.toString().split(",");
-        if(valueParts.length == 5) {
-            emitUserEventValueTriplets(valueParts[1], valueParts[0], yesValue, context);
-            emitUserEventValueTriplets(valueParts[2], valueParts[0], maybeValue, context);
-            emitUserEventValueTriplets(valueParts[4], valueParts[0], noValue, context);
+        if(valueParts.length == 5 && !valueParts[0].equals("")) {
+            if(!valueParts[1].equals(""))   emitUserEventValueTriplets(valueParts[1], valueParts[0], yesValue, context);
+            if(!valueParts[2].equals(""))   emitUserEventValueTriplets(valueParts[2], valueParts[0], maybeValue, context);
+            if(!valueParts[4].equals(""))   emitUserEventValueTriplets(valueParts[4], valueParts[0], noValue, context);
         }
     }
 

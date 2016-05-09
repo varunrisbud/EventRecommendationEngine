@@ -4,6 +4,7 @@ import org.apache.mahout.cf.taste.common.TasteException;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
+import org.apache.mahout.cf.taste.impl.similarity.LogLikelihoodSimilarity;
 import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 
 import org.apache.mahout.cf.taste.model.DataModel;
@@ -21,19 +22,21 @@ import java.util.List;
  */
 public class UserToUserCollaborativeFiltering {
 
-    public List<RecommendedItem> getRecommendation(int userId, int numberOfRecommendations) throws IOException, TasteException {
-        ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File("/user/user01/EventRecommendationEngine/DATA/data.csv");
+    public List<RecommendedItem> getRecommendation(long userId, int numberOfRecommendations) throws IOException, TasteException {
+
+        File file = new File("/media/alcohol/Study/CS_286-James_Casaletto/Event_Recommendation/OUT/part-r-00000");
 
         DataModel model = new FileDataModel(file);
 
-        UserSimilarity similarity = new PearsonCorrelationSimilarity(model);
+        UserSimilarity similarity = new LogLikelihoodSimilarity(model);
 
         UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.1, similarity, model);
 
         UserBasedRecommender recommender = new GenericUserBasedRecommender(model, neighborhood, similarity);
 
-        List<RecommendedItem> recommendations = recommender.recommend(userId, numberOfRecommendations);
+        FriendsRescorer rescorer = new FriendsRescorer();
+
+        List<RecommendedItem> recommendations = recommender.recommend(userId, numberOfRecommendations, rescorer);
 
         return recommendations;
     }
@@ -42,7 +45,7 @@ public class UserToUserCollaborativeFiltering {
 
         UserToUserCollaborativeFiltering userToUserCollaborativeFiltering = new UserToUserCollaborativeFiltering();
 
-        List<RecommendedItem> recommendations = userToUserCollaborativeFiltering.getRecommendation(2, 3);
+        List<RecommendedItem> recommendations = userToUserCollaborativeFiltering.getRecommendation(1918795690L, 3);
 
         for (RecommendedItem recommendation : recommendations) System.out.println(recommendation);
     }
