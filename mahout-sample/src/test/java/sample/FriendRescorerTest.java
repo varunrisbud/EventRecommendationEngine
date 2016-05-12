@@ -17,4 +17,10 @@ public class FriendRescorerTest {
             System.out.println("Key: " + friends.getKey() + " \tValue: " + friends.getValue());
         }*//*
     }*/
+
+    /*@Test
+    public void getUsersWithLocation() throws IOException, TasteException {
+        FriendsRescorer friendsRescorer = new FriendsRescorer(1918795690L);
+        friendsRescorer.getUserInTrainDataSetWhoHaveFriendsList();
+    }*/
 }
