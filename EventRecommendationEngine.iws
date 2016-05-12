@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e53b029-2c27-4589-9ba0-3a3e0d87bbb7" name="Default" comment="Modified the logic to rescore the event if friends are attending the event.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/create-usereventvaluematrix/create-usereventvaluematrix.iml" afterPath="$PROJECT_DIR$/create-usereventvaluematrix/create-usereventvaluematrix.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahout-sample/mahout-sample.iml" afterPath="$PROJECT_DIR$/mahout-sample/mahout-sample.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahout-sample/src/main/java/sample/UserToUserCollaborativeFiltering.java" afterPath="$PROJECT_DIR$/mahout-sample/src/main/java/sample/UserToUserCollaborativeFiltering.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahout-sample/src/test/java/sample/FriendRescorerTest.java" afterPath="$PROJECT_DIR$/mahout-sample/src/test/java/sample/FriendRescorerTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahout-sample/src/test/java/sample/UserToUserCollaborativeFilteringTest.java" afterPath="$PROJECT_DIR$/mahout-sample/src/test/java/sample/UserToUserCollaborativeFilteringTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mahout-sample/src/main/java/sample/FriendsRescorer.java" afterPath="$PROJECT_DIR$/mahout-sample/src/main/java/sample/FriendsRescorer.java" />
     </list>
     <ignored path="EventRecommendationEngine.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -92,14 +88,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FriendsRescorer.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="FriendsRescorer.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mahout-sample/src/main/java/sample/FriendsRescorer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="-31.5">
+              <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -114,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FriendRescorerTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="FriendRescorerTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mahout-sample/src/test/java/sample/FriendRescorerTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6086956">
-              <caret line="18" column="7" selection-start-line="12" selection-start-column="2" selection-end-line="18" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -160,10 +154,10 @@
         <option value="$PROJECT_DIR$/create-usereventvaluematrix/pom.xml" />
         <option value="$PROJECT_DIR$/executionScripts/createUserEventValueMatrix.sh" />
         <option value="$PROJECT_DIR$/create-usereventvaluematrix/src/main/java/mapreduce/preparedata/UserEventValueMatrixMapper.java" />
-        <option value="$PROJECT_DIR$/mahout-sample/src/main/java/sample/FriendsRescorer.java" />
         <option value="$PROJECT_DIR$/mahout-sample/src/main/java/sample/UserToUserCollaborativeFiltering.java" />
         <option value="$PROJECT_DIR$/mahout-sample/src/test/java/sample/UserToUserCollaborativeFilteringTest.java" />
         <option value="$PROJECT_DIR$/mahout-sample/src/test/java/sample/FriendRescorerTest.java" />
+        <option value="$PROJECT_DIR$/mahout-sample/src/main/java/sample/FriendsRescorer.java" />
       </list>
     </option>
   </component>
@@ -1135,7 +1129,7 @@
       <workItem from="1462759860092" duration="3220000" />
       <workItem from="1462831005332" duration="9817000" />
       <workItem from="1462924949878" duration="2341000" />
-      <workItem from="1463006241378" duration="4822000" />
+      <workItem from="1463006241378" duration="6192000" />
     </task>
     <task id="LOCAL-00001" summary="Added mahout user to user collaborative filtering example.">
       <created>1462405471216</created>
@@ -1215,7 +1209,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="62004000" />
+    <option name="totallyTimeSpent" value="63374000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1301" height="744" extended-state="0" />
@@ -1230,10 +1224,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32988048" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40033785" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3277027" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.9037162" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24940239" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293919" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1244,7 +1239,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1304,9 +1298,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1338,9 +1330,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1364,9 +1354,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1390,9 +1378,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="26" column="55" selection-start-line="26" selection-start-column="55" selection-end-line="26" selection-end-column="55" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1416,9 +1402,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="68" selection-start-line="27" selection-start-column="68" selection-end-line="27" selection-end-column="68" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1626,16 +1610,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mahout-sample/src/main/java/sample/FriendsRescorer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="50" selection-start-line="114" selection-start-column="50" selection-end-line="114" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/create-usereventvaluematrix/src/main/java/mapreduce/preparedata/UserEventValueMatrixMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1648,22 +1622,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/executionScripts/createUserEventValueMatrix.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/executionScripts/runMahoutSample.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
           <folding />
         </state>
       </provider>
@@ -1684,10 +1642,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/executionScripts/runMahoutSample.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="12" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/executionScripts/createUserEventValueMatrix.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/mahout-sample/src/test/java/sample/FriendRescorerTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6086956">
-          <caret line="18" column="7" selection-start-line="12" selection-start-column="2" selection-end-line="18" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mahout-sample/src/main/java/sample/FriendsRescorer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-31.5">
+          <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding />
         </state>
       </provider>
