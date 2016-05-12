@@ -1,6 +1,9 @@
 package sample;
 
 import org.apache.mahout.cf.taste.common.TasteException;
+import org.apache.mahout.cf.taste.eval.RecommenderBuilder;
+import org.apache.mahout.cf.taste.eval.RecommenderEvaluator;
+import org.apache.mahout.cf.taste.impl.eval.AverageAbsoluteDifferenceRecommenderEvaluator;
 import org.apache.mahout.cf.taste.impl.model.file.FileDataModel;
 import org.apache.mahout.cf.taste.impl.neighborhood.ThresholdUserNeighborhood;
 import org.apache.mahout.cf.taste.impl.recommender.GenericUserBasedRecommender;
@@ -10,6 +13,7 @@ import org.apache.mahout.cf.taste.impl.similarity.PearsonCorrelationSimilarity;
 import org.apache.mahout.cf.taste.model.DataModel;
 import org.apache.mahout.cf.taste.neighborhood.UserNeighborhood;
 import org.apache.mahout.cf.taste.recommender.RecommendedItem;
+import org.apache.mahout.cf.taste.recommender.Recommender;
 import org.apache.mahout.cf.taste.recommender.UserBasedRecommender;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
 
@@ -29,7 +33,7 @@ public class UserToUserCollaborativeFiltering {
 
     static {
         try {
-            File file = new File("/media/alcohol/Study/CS_286-James_Casaletto/Event_Recommendation/OUT/part-r-00000");
+            File file = new File("/user/user01/EventRecommendationEngine/OUT/part-r-00000");
 
             model = new FileDataModel(file);
 
@@ -52,11 +56,30 @@ public class UserToUserCollaborativeFiltering {
         return recommendations;
     }
 
+    public void evaluateResults() throws TasteException {
+        RecommenderEvaluator evaluator = new AverageAbsoluteDifferenceRecommenderEvaluator();
+        RecommenderBuilder builder = new MyRecommenderBuilder();
+        double result = evaluator.evaluate(builder, null, model, 0.999, 1.0);
+        System.out.println(result);
+    }
+    
+    private class MyRecommenderBuilder implements RecommenderBuilder {
+
+        @Override
+        public Recommender buildRecommender(DataModel dataModel) throws TasteException {
+            UserSimilarity similarity = new LogLikelihoodSimilarity(dataModel);
+            UserNeighborhood neighborhood = new ThresholdUserNeighborhood(0.1, similarity, dataModel);
+            return new GenericUserBasedRecommender(dataModel, neighborhood, similarity);
+        }
+    }
+
     public static void main(String[] args) throws IOException, TasteException {
         UserToUserCollaborativeFiltering userToUserCollaborativeFiltering = new UserToUserCollaborativeFiltering();
 
         List<RecommendedItem> recommendations = userToUserCollaborativeFiltering.getRecommendation(4223811312L, 3);
 
         for (RecommendedItem recommendation : recommendations) System.out.println(recommendation);
+
+        userToUserCollaborativeFiltering.evaluateResults();
     }
 }
