@@ -16,7 +16,7 @@ public class UserEventValueMatrixReducer extends Reducer<Text,Text,Text,Text> {
             String[] userIdValuePairParts = value.split("\\|");
             StringBuilder reducerValue = new StringBuilder();
             reducerValue.append(eventId.toString()).append(",").append(userIdValuePairParts[1]);
-            context.write(new Text(userIdValuePairParts[0] + ","), new Text(reducerValue.toString()));
+            context.write(new Text(userIdValuePairParts[0]), new Text(reducerValue.toString()));
         }
     }
 

@@ -79,7 +79,7 @@ public class FriendsRescorer implements IDRescorer {
     public void populateFriendsFromFile() throws IOException, TasteException {
         if(!isInitialized) {
 
-            File file = new File("/user/use01/EventRecommendationEngine/user_friends.csv");
+            File file = new File("/user/use01/EventRecommendationEngine/DATA/user_friends.csv");
 
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 

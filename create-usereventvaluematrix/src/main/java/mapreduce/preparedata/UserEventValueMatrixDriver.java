@@ -17,6 +17,7 @@ import org.apache.hadoop.util.ToolRunner;
 public class UserEventValueMatrixDriver extends Configured implements Tool {
     public static void main(String[] args) throws Exception {
         Configuration conf = new Configuration();
+        conf.set("mapreduce.output.textoutputformat.separator", ",");
         System.exit(ToolRunner.run(conf, new UserEventValueMatrixDriver(), args));
     }
 
