@@ -73,7 +73,7 @@
     <bytecodeTargetLevel>
       <module name="create-usereventvaluematrix" target="1.7" />
       <module name="EventRecommendationEngine" target="1.5" />
-      <module name="mahout-sample" target="1.8" />
+      <module name="mahout-sample" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="CopyrightManager" default="" />

@@ -17,7 +17,6 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.stream.Stream;
 
 /**
  * Created by alcohol on 5/7/16.
@@ -176,8 +175,22 @@ public class FriendsRescorer implements IDRescorer {
         } else {
             //System.out.println("User location not empty");
             int lineID = lookupEvent(eventLineLookupFile, eventID);
-            try (Stream<String> lines = Files.lines(Paths.get(cleanedEventFile))) {
-                String line = lines.skip(lineID).findFirst().get();
+
+            BufferedReader br = null;
+            try {
+                br = new BufferedReader(new FileReader(cleanedEventFile));
+                String line;
+                int lineCounter = 0;
+                while ((line = br.readLine()) != null) {
+                    lineCounter++;
+                    if (lineCounter > lineID) {
+                        //System.out.println("Event ID: " + eventID + "\t Line" + line);
+                        break;
+                    }
+                }
+
+            //try (Stream<String> lines = Files.lines(Paths.get(cleanedEventFile))) {
+                //String line = lines.skip(lineID).findFirst().get();
                 String[] eventDetails = line.split(",");
                 if (eventDetails[5].trim().isEmpty() || eventDetails[6].trim().isEmpty()) {
                     LAT_LANG_PRESENT = false;
@@ -206,10 +219,14 @@ public class FriendsRescorer implements IDRescorer {
                         return Long.MAX_VALUE;
                     }
                 }
-
-            } catch (Exception e) {
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
+            //} catch (Exception e) {
+               // e.printStackTrace();
+            //}
             return Long.MAX_VALUE;
         }
     }

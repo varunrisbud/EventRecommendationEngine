@@ -15,7 +15,6 @@ import org.apache.mahout.cf.taste.recommender.RecommendedItem;
 import org.apache.mahout.cf.taste.recommender.Recommender;
 import org.apache.mahout.cf.taste.recommender.UserBasedRecommender;
 import org.apache.mahout.cf.taste.similarity.UserSimilarity;
-import org.apache.mahout.math.ssvd.SequentialOutOfCoreSvd;
 
 import java.io.File;
 import java.io.IOException;
@@ -68,8 +67,9 @@ public class UserToUserCollaborativeFiltering {
         }*/
 
 
-        List<Map.Entry<Long, Long>> distanceEntries = new ArrayList(eventDistanceMap.entrySet());
-        Collections.sort(distanceEntries, (o1, o2) -> o1.getValue().compareTo(o2.getValue()));
+        Map<Long, Long> sortedEventDistanceMap = sortByComparator(eventDistanceMap, true);
+        List<Map.Entry<Long, Long>> distanceEntries = new ArrayList(sortedEventDistanceMap.entrySet());
+        //Collections.sort(distanceEntries, (o1, o2) -> o1.getValue().compareTo(o2.getValue()));
         List<Map.Entry<Long, Long>> topEventsByDistance = distanceEntries.subList(0, Math.min(distanceEntries.size(), numberOfRecommendations));
 
         //System.out.println("Sorted Distance");
@@ -150,4 +150,38 @@ public class UserToUserCollaborativeFiltering {
 
         //userToUserCollaborativeFiltering.evaluateResults();
     }
+
+    private static Map<Long, Long> sortByComparator(Map<Long, Long> unsortMap, final boolean order)
+    {
+
+        List<Map.Entry<Long, Long>> list = new LinkedList<Map.Entry<Long, Long>>(unsortMap.entrySet());
+
+        // Sorting the list based on values
+        Collections.sort(list, new Comparator<Map.Entry<Long, Long>>()
+        {
+            public int compare(Map.Entry<Long, Long> o1,
+                               Map.Entry<Long, Long> o2)
+            {
+                if (order)
+                {
+                    return o1.getValue().compareTo(o2.getValue());
+                }
+                else
+                {
+                    return o2.getValue().compareTo(o1.getValue());
+
+                }
+            }
+        });
+
+        // Maintaining insertion order with the help of LinkedList
+        Map<Long, Long> sortedMap = new LinkedHashMap<Long, Long>();
+        for (Map.Entry<Long, Long> entry : list)
+        {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
+        return sortedMap;
+    }
+
 }
