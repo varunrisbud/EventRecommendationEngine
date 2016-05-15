@@ -32,7 +32,7 @@ public class UserToUserCollaborativeFiltering {
 
     static {
         try {
-            File file = new File("/user/user01/EventRecommendationEngine/DATA/part-r-00000");
+            File file = new File("/media/alcohol/Study/CS_286-James_Casaletto/Event_Recommendation/input/part-r-00000");
 
             model = new FileDataModel(file);
 

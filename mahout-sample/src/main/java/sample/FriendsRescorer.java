@@ -89,7 +89,7 @@ public class FriendsRescorer implements IDRescorer {
     public void populateFriendsFromFile() throws IOException, TasteException {
         if(!isInitialized) {
 
-            File file = new File("/user/user01/EventRecommendationEngine/DATA/user_friends.csv");
+            File file = new File("/media/alcohol/Study/CS_286-James_Casaletto/Event_Recommendation/input/user_friends.csv");
 
             BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(file)));
 
@@ -164,9 +164,9 @@ public class FriendsRescorer implements IDRescorer {
         boolean STATE_PRESENT = true;
         boolean COUNTRY_PRESENT = true;
 
-        String eventLineLookupFile = "/user/user01/EventRecommendationEngine/DATA/eventAndLineLookup.csv";
-        String cleanedEventFile = "/user/user01/EventRecommendationEngine/DATA/cleanedEventData.csv";
-        String userFile = "/user/user01/EventRecommendationEngine/DATA/users.csv";
+        String eventLineLookupFile = "/media/alcohol/Study/CS_286-James_Casaletto/Event_Recommendation/input/eventAndLineLookup.csv";
+        String cleanedEventFile = "/media/alcohol/Study/CS_286-James_Casaletto/Event_Recommendation/input/cleanedEventData.csv";
+        String userFile = "/media/alcohol/Study/CS_286-James_Casaletto/Event_Recommendation/input/users.csv";
 
         String USER_LOCATION = findUser(userFile, userID);
         if (USER_LOCATION.isEmpty()) {
